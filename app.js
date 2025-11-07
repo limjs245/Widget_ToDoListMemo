@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         deleteBtn.addEventListener('click', () => {
-            li.remove();
+            const newLi = li.cloneNode(false);
+            li.parentNode?.replaceChild(newLi, li);
+            newLi.remove();
             saveData();
         });
 
@@ -137,12 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addBtn.onclick = addItem;
 
-    input.addEventListener('focus', () => {
-        input.addEventListener('keydown', (e) => {
-            if (e.key == 'Enter') {
-                addItem();
-            }
-        });
+    input.addEventListener('keydown', (e) => {
+        if (e.key == 'Enter') {
+            addItem();
+        }
     });
 
     loadData();

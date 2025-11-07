@@ -131,6 +131,10 @@ html, body {
     color: white;
 }
 
+.menu > button:focus {
+    outline: 0;
+}
+
 .root {
     width: 100%;
     height: calc(100% - 20px);
