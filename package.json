@@ -1,0 +1,39 @@
+{
+  "name": "widget_todolistmemo",
+  "version": "1.0.1",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^39.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.my-widget.todomemo",
+    "productName": "ToDo_List",
+    "publish": {
+      "provider": "github",
+      "owner": "limjs245",
+      "repo": "YourGitHubRepoName"
+    },
+    "icon": "icon.ico",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  }
+}

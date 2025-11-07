@@ -1,0 +1,22 @@
+# 1. 의존성 (Dependencies)
+# npm install로 다운로드한 모든 패키지. 용량이 매우 큽니다.
+/node_modules
+/node_modules/*
+
+# 2. 빌드 결과물 (Build output)
+# npm run build로 생성된 .exe 파일 등이 담기는 폴더입니다.
+/dist
+/dist/*
+
+# 3. 로그 파일 (Logs)
+# npm 에러 로그
+npm-debug.log*
+*.log
+
+# 4. 운영체제(OS) 및 에디터(IDE) 파일
+# Windows 썸네일 캐시
+Thumbs.db
+# VS Code 설정
+.vscode/
+# (Mac OS 파일 - 협업을 위해 미리 추가)
+.DS_Store

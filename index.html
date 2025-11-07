@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="menu">
+            <div class="drag-region"><p id="notification"></p></div>
+            <button id="min" title="최소화">-</button>
+            <button id="close" title="닫기">×</button>
+        </div>
+        <div class="root">
+            <main>
+                <p>&nbsp;</p>
+                <h1 title="해야할 일">해야할 일</h1>
+                <div class="line"></div>
+                <ul id="todo-list"></ul>
+                <div class="item-input-box">
+                    <div class="flex">
+                        <p class="deco">&gt;&nbsp;</p>
+                        <div>
+                            <input type="text" class="item-input" id="item-input" placeholder="입력하세요.">
+                            <div class="deco-2"></div>
+                        </div>
+                    </div>
+                    <button class="add-btn" id="add-btn">저장</button>
+                </div>
+                <h1 class="finish" title="완료한 일">완료</h1>
+                <div class="line"></div>
+                <ul id="did-list"></ul>
+                <p>&nbsp;</p>
+                <script>
+                    document.getElementById('min').onclick = () => window.appWindow?.minimize();
+                    document.getElementById('close').onclick = () => window.appWindow?.close();
+                </script>
+                <script src="app.js"></script>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
