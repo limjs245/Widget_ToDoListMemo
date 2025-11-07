@@ -1,5 +1,6 @@
 const {app, BrowserWindow, ipcMain} = require('electron');
 const path = require('path');
+const { autoUpdater } = require('electron-updater');
 
 function createWindow() {
     const window = new BrowserWindow({
@@ -29,10 +30,13 @@ ipcMain.on('window:minimize', (e) => BrowserWindow.fromWebContents(e.sender)?.mi
 ipcMain.on('window:close', (e) => BrowserWindow.fromWebContents(e.sender)?.close());
 
 app.whenReady()
-  .then(() => createWindow())
-  .catch((err) => {
-    console.error('[boot] failed to create window:', err);
-    app.quit();
-  });
+    .then(() => {
+        createWindow()
+        autoUpdater.checkForUpdatesAndNotify();
+    })
+    .catch((err) => {
+        console.error('[boot] failed to create window:', err);
+        app.quit();
+    });
 app.on('window-all-closed', () => {if (process.platform !== 'darwin') {app.quit();}});
 app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });

@@ -21,7 +21,7 @@
     "publish": {
       "provider": "github",
       "owner": "limjs245",
-      "repo": "YourGitHubRepoName"
+      "repo": "Widget_ToDoListMemo"
     },
     "icon": "icon.ico",
     "win": {
